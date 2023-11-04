@@ -45,7 +45,7 @@ const App = () => {
           setIsLoading(false);
           return;
         }
-        setPictures([...pictures, ...hits]);
+        setPictures(prev => [...prev, ...hits]);
         setLoadMore(page < Math.ceil(totalHits / 12));
         setIsLoading(false);
       } catch (error) {
