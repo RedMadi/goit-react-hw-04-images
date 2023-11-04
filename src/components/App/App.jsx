@@ -39,6 +39,7 @@ const App = () => {
   useEffect(() => {
     async function handleFetchPicturesWithQuery() {
       try {
+        setIsLoading(true);
         const { hits, totalHits } = await FetchPicturesWithQuery(page, query);
         if (!totalHits) {
           console.log('No results by your query');
