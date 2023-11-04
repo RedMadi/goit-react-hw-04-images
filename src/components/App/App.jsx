@@ -59,7 +59,7 @@ const App = () => {
       setIsLoading(true);
       handleFetchPicturesWithQuery();
     }
-  }, [page, query, pictures]);
+  }, [page, query]);
 
   const handleLoadMore = () => {
     if (loadMore) {
