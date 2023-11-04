@@ -17,7 +17,7 @@ const Modal = ({ currentImg, currentAlt, closeModal }) => {
       document.body.classList.remove('modal-open');
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [pictures, handleKeyDown]);
 
   return (
     <StyledModal onClick={closeModal}>
