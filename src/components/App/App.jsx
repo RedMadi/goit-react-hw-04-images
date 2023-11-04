@@ -10,7 +10,7 @@ import { AppStyled } from './App.styled';
 const App = () => {
   const [pictures, setPictures] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [loadMore, setLoadMore] = useState(false);
@@ -49,7 +49,8 @@ const App = () => {
         setLoadMore(page < Math.ceil(totalHits / 12));
         setIsLoading(false);
       } catch (error) {
-        setError(error);
+        // setError(error);
+        console.error(error);
         setIsLoading(false);
       }
     }
