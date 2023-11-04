@@ -47,10 +47,10 @@ const App = () => {
         }
         setPictures(prev => [...prev, ...hits]);
         setLoadMore(page < Math.ceil(totalHits / 12));
-        setIsLoading(false);
       } catch (error) {
         // setError(error);
         console.error(error);
+      } finally {
         setIsLoading(false);
       }
     }
