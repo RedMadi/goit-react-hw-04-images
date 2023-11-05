@@ -37,6 +37,7 @@ const App = () => {
     }
   };
   useEffect(() => {
+    if (!query) return;
     async function handleFetchPicturesWithQuery() {
       try {
         setIsLoading(true);
@@ -55,11 +56,7 @@ const App = () => {
         setIsLoading(false);
       }
     }
-
-    if (page !== 1 || query !== '') {
-      setIsLoading(true);
-      handleFetchPicturesWithQuery();
-    }
+    handleFetchPicturesWithQuery();
   }, [page, query]);
 
   const handleLoadMore = () => {
